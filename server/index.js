@@ -21,6 +21,10 @@ dotenv.config();
 
 app.use('/posts', postRoute);
 app.use('/user', userRoute);
+
+app.get('/', (req, res)=> {
+    res.send('Hello to Memories API');
+})
 const port = process.env.PORT || 3000;
 
 mongoose.connect(process.env.CONNECTION_URL, {useUnifiedTopology: true, useNewUrlParser:true})
